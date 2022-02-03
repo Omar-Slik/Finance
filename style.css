@@ -1,0 +1,211 @@
+body{
+  background:URL("1.jpg");
+  background-size:cover;
+  font-family: 'Jost', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background:URL("head.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+#wrapper{
+position:relative;
+margin: auto;
+  border:2px solid #333333;
+}
+
+#vkolumn{
+  width:200px;
+  height:900px;
+  padding:5px;
+  background-color:#4643437c;
+  float:left;
+}
+#ckolumn{
+  width:auto;
+  height:900px;
+  padding:5px;
+  background-color:#c1cecf7c;  
+  text-align:center;
+}
+#hkolumn{
+  right: 0;
+  width:300px;
+  height:900px;
+  padding:5px;
+  background-color:#682a2ad7;
+  float:right;
+}
+#news{
+  width:280px;
+  height:100px;
+  padding:5px;
+  margin:10px auto 0 auto;
+  background-color:#fff8f8a9;
+}
+.ruta{
+  border: solid;
+  width:280px;
+  height:100px;
+  padding:5px;
+  margin:auto;
+  background-color:#fff8f8a9;
+}
+#Wnews{
+  width:280px;
+  height:15px;
+  padding:5px;
+  margin:10px auto 0 auto;
+  background-color:#fff8f8a9;
+}
+#news  {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+#Wnews  {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-bottom: 100%;
+    width:280px;
+  }
+
+  to {
+    margin-top: 4%;
+    width:280px;
+  }
+}
+
+
+.divn{
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.divn:before,
+.divn:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.divn:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.divn:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 4rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}

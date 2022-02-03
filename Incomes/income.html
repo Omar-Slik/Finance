@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" href="../icon.png">
+    <title>My Incomes</title>
+</head>
+<body> 
+    
+    <div id="wrapper">
+        <div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Incomes/income.html">Income</a></li>
+                <li><a href="../Expenses/expense.html">Expense</a></li>
+                <li><a href="../comingsoon_02/index.html">News</a></li>
+                <li><a href="../comingsoon_02/index.html">Contact</a></li>
+                <li><a href="../comingsoon_02/index.html">About</a></li>
+            </ul>
+        </div>
+        <div id="vkolumn">
+           <h1 class="divn">Welcome to our Service</h1>
+           <h2 class="divn"> We help you to watch your economy </h2>
+        </div>
+        <div id="hkolumn">
+            <div id="createIncomeDiv">
+                <form id="createIncomeForm">
+                    <table id="CreateIncomeTable" border=1 class="ruta">
+                        <tr> <th colspan="2"> Create Income  </th></tr> 
+                        <tr> <td> Amount </td><td> <input type="number" id="IncomeAmountInput" placeholder="Amount" step="0.01" min="0" required></td></tr>
+                        <tr> <td> Sender </td><td> <input type="string" id="IncomeReceiverInput" placeholder="Sender" required minlength="2" maxlength="50"></td></tr>
+                        <tr> <td> Comment</td><td>  <input type="string" id="IncomeCommentInput" placeholder="Comment (Optional)" maxlength="50" ></td></tr> 
+                        <tr> <td> TimeStamp</td><td> <input type = "date" id="IncomeTimeInput" name = "datetime" required ></td></tr>
+                        <tr> <th colspan="2"><input id="createIncome" type="submit" value="Create income"></th></tr> 
+                      </table>
+                      
+                    
+                </form>
+            </div>
+        </div>       
+        <div id="ckolumn">
+            <div id="listIncomesDiv">
+                <!-- onmousedown="showlistExpenses()"  style="opacity: 0;" -->
+
+                <input id="listIncomes" type="submit" value="List of incomes">
+
+                <form id="listIncomesForm" >  
+
+                    <table id="incomeList" border=1 class="ruta">      
+                        <tr> <th>press the button above to display the list here</th>  </tr>                  
+
+                    </table>
+                    <input id="hidelistIncomes" type="submit" value="Hide List of Incomes" onmousedown="hidelistIncomes()" style="opacity: 0;">
+                
+                </form>
+            </div>                   
+              
+        </div>
+    </div>
+    <script src="IncomeScript.js"></script>   
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="icon" href="../icon.png">
+    <title>My Expenses</title>
+</head>
+<body> 
+    
+    <div id="wrapper">
+        <div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../Incomes/income.html">Income</a></li>
+                <li><a href="../Expenses/expense.html">Expense</a></li>
+                <li><a href="../comingsoon_02/index.html">News</a></li>
+                <li><a href="../comingsoon_02/index.html">Contact</a></li>
+                <li><a href="../comingsoon_02/index.html">About</a></li>
+            </ul>
+        </div>
+        <div id="vkolumn">
+           <h1 class="divn">Welcome to our Service</h1>
+           <h2 class="divn"> We help you to watch your economy </h2>
+        </div>
+        <div id="hkolumn">
+            <div id="createExpenseDiv">
+                <form id="createExpenseForm">
+                    <table id="CreateExpenseTable" border=1 class="ruta">
+                        <tr> <th colspan="2"> Create Expense  </th></tr> 
+                        <tr> <td> Amount </td><td> <input type="number" id="ExpenseAmountInput" placeholder="Amount" step="0.01" min="0" required></td></tr>
+                        <tr> <td> Receiver </td><td> <input type="string" id="ExpenseReceiverInput" placeholder="Receiver" required minlength="2" maxlength="50"></td></tr>
+                        <tr> <td> Comment</td><td>  <input type="string" id="ExpenseCommentInput" placeholder="Comment (Optional)" maxlength="50"></td></tr> 
+                        <tr> <td> TimeStamp</td><td> <input type = "date" id="ExpenseTimeInput" name = "datetime" required></td></tr>
+                        <tr> <th colspan="2"><input id="createExpense" type="submit" value="Create expense"></th></tr> 
+                    </table>
+                  
+                    
+                </form>
+            </div>
+        </div>
+        <div id="ckolumn">
+            <div id="listExpensesDiv">
+                <!-- onmousedown="showlistExpenses()"  style="opacity: 0;" -->
+
+                <input id="listExpenses" type="submit" value="List of Expenses"  >
+
+                <form id="listExpensesForm" >  
+
+                    <table id="ExpenseList" border=1 class="ruta">      
+                        <tr> <th>press the button above to display the list here</th>  </tr>                  
+
+                    </table>
+                    <input id="hidelistExpenses" type="submit" value="Hide List of Expenses" onmousedown="hidelistExpenses()" style="opacity: 0;">
+                
+                </form>
+            </div>                   
+              
+        </div>
+    </div>
+    <script src="ExpenseScript.js"></script>   
+    <script>
+        
+    </script>
+</body>
+</html>
